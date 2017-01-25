@@ -10,16 +10,9 @@ node {
   sh "npm install"
 
   try {
-    stage 'Linting'
-    sh "npm run build"
+ 
 
     stage 'Testing'
     sh "npm run test"
-  } finally {
-    
-
-    stage 'Creating Report Artifact'
-    sh "mv htmlhint-output.html output/htmlhint-output.html"
-    step([$class: 'ArtifactArchiver', artifacts: 'output/*.html', fingerprint: true])
-  }
+  } 
 }
