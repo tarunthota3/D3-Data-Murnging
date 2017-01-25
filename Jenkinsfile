@@ -10,8 +10,6 @@ node {
   sh "npm install"
 
   try {
- 
-
     stage 'Testing'
     sh "npm run test"
   } 
