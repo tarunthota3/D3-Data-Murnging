@@ -9,8 +9,7 @@ node {
   sh "npm prune"
   sh "npm install"
 
-  try {
-    stage 'Testing'
-    sh "npm run test"
-  } 
+  stage 'Testing'
+  sh "npm run test"
+ 
 }
