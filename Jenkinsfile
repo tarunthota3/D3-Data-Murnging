@@ -3,7 +3,7 @@ node {
   sh "env"
 
   stage 'Checkout Repository'
-  git url: 'https://https://github.com/stackroute-immersive-wave/js_dev_boilerplate.git', branch: "${env.BRANCH_NAME}"
+  git url: 'https://github.com/stackroute-immersive-wave/js_dev_boilerplate.git', branch: "${env.BRANCH_NAME}"
 
   stage 'Installing Dependencies'
   sh "npm prune"
@@ -17,7 +17,7 @@ node {
     sh "npm run test"
   } finally {
     
-    
+
     stage 'Creating Report Artifact'
     sh "mv htmlhint-output.html output/htmlhint-output.html"
     step([$class: 'ArtifactArchiver', artifacts: 'output/*.html', fingerprint: true])
