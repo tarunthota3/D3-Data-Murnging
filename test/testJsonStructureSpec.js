@@ -1,12 +1,15 @@
 var chai = require('chai');
 var expect = chai.expect;
-var jsonDiff = require('./jsondiff');
-var totalObjectKeys = require('./totalObjectKeys');
-var expectedJSON = require('./expectedjson/expectedJsonSumeet1.json');
-var actualJSON = require('../outputdata/outputJsonSumeet1.json');
+var jsonDiff = require('../jsondiff');
+var totalObjectKeys = require('../totalObjectKeys');
+var expectedJSON = require('./expectedjson/expectedJsonTarun.json');
+var actualJSON = require('../outputdata/actualJsonTarun.json');
+var func = require('../js/Assignment.js');
 describe('Test Application as Blackbox', function(){
-  it ('Test JSON is well formed', function(done){
+  it('Test JSON is well formed', function(done){
     /*ToDO Parse JSON*/
+    var result = func(1960, 1970);
+    expect(result).equal('JSON written successfully');
     done();
   });
   it('JSON has expected Number of Objects', function(done){
@@ -15,7 +18,7 @@ describe('Test Application as Blackbox', function(){
     expect(objMatrix.totalNoKeys).to.not.equal(0);
     done();
   });
-  it.skip('Test JSON is as expected', function(done){
+  it('Test JSON is as expected', function(done){
     var compareResult = jsonDiff.compareJSONObjects(expectedJSON, actualJSON);
     expect(compareResult.diffs).equal(0);
     done();
