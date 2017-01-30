@@ -15,7 +15,7 @@ describe('Test Application as Blackbox', function(){
     expect(objMatrix.totalNoKeys).to.not.equal(0);
     done();
   });
-  it.skip('Test JSON is as expected', function(done){
+  it('Test JSON is as expected', function(done){
     var compareResult = jsonDiff.compareJSONObjects(expectedJSON, actualJSON);
     expect(compareResult.diffs).equal(0);
     done();
