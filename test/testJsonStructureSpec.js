@@ -8,11 +8,14 @@ var actualJSON = require('../outputdata/Male_Female_Expentency_Nitin.json');
 =======
 var expectedJSON = require('./expectedjson/expectedJsonvishnu1.json');
 var actualJSON = require('../outputdata/newdata.json');
+<<<<<<< HEAD
 =======
 >>>>>>> c1044bae5ade9b91e06c23d96cf55df526bf6aeb
 var expectedJSON = require('./expectedjson/expectedjsonRagesh.json');
 var actualJSON = require('../outputdata/outputjsonRagesh.json');
 >>>>>>> 893ed5415d3673731edb262d692db26861712522
+=======
+>>>>>>> 5bf67ab2e2cfaf1b615d7a16f274206499740d47
 describe('Test Application as Blackbox', function(){
   it ('Test JSON is well formed', function(done){
     /*ToDO Parse JSON*/
