@@ -2,7 +2,6 @@ var chai = require('chai');
 var expect = chai.expect;
 var jsonDiff = require('./jsondiff');
 var totalObjectKeys = require('./totalObjectKeys');
-<<<<<<< HEAD
 var expectedJSON = require('./expectedjson/expectedJsonvishnu1.json');
 var actualJSON = require('../outputdata/newdata.json');
 =======
