@@ -1,6 +1,6 @@
-module.exports = ((startdate,enddate)=> {
+module.exports = (startdate, enddate)=> {
 const fs = require('fs');
-let input = fs.createReadStream('Indicators.csv');
+// let input = fs.createReadStream('Indicators.csv');
 let rl = require('readline').createInterface({
 	input: fs.createReadStream('Indicators.csv'),
 	terminal: false
@@ -13,21 +13,24 @@ let rural1 = [0, 0, 0, 0, 0];
 let urban1 = [0, 0, 0, 0, 0];
 let country = ['INDIA', 'CHINA', 'NEPAL', 'PAKISTAN', 'BHUTAN'];
 let temp;
-if(isNaN(startdate) && isNaN(enddate) || typeof startdate !== 'number' || typeof enddate !== 'number') {
-	throw new Error("Not a number");
+if(isNaN(startdate) && isNaN(enddate)
+	|| typeof startdate !== 'number' || typeof enddate !== 'number') {
+	throw new Error('Not a number');
 }
 rl.on('line', function(line) {
 	let arr1 = line.split(',');
 	let obj = {};
 	let obj1 = {};
 	// console.log(arr1);
-	startdate = 1960;
-	enddate = 1970;
-	if(arr1[1] === 'IND' && (arr1[4] >= startdate && arr1[4] <= enddate) && arr1[3] === 'SP.RUR.TOTL.ZS') {
+	// startdate = 1960;
+	// enddate = 1970;
+	if(arr1[1] === 'IND' && (arr1[4] >= startdate && arr1[4] <= enddate)
+		&& arr1[3] === 'SP.RUR.TOTL.ZS') {
 		rural = arr1[5];
 		// console.log(rural);
 	}
-	if(arr1[1] === 'IND' && (arr1[4] >= startdate && arr1[4] <= enddate) && arr1[3] === 'SP.URB.TOTL.IN.ZS') {
+	if(arr1[1] === 'IND' && (arr1[4] >= startdate &&
+		arr1[4] <= enddate) && arr1[3] === 'SP.URB.TOTL.IN.ZS') {
 		obj.year = arr1[4];
 		obj['Rural population (% of total population)'] = rural;
 		obj['Urban population (% of total)'] = arr1[5];
@@ -93,7 +96,4 @@ rl.on('close', function() {
 	fs.writeFile('stackedbarchart.json', JSON.stringify(arr3));
 });
 return 'JSON written successfully';
-});
-// module.exports={
-// 	con : convert
-// };
+};
