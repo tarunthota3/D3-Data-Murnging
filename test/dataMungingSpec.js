@@ -3,7 +3,7 @@ expect = require("chai").expect,
 sinon = require('sinon'),
 readline = require("readline"),
 fs=require("fs"),
-convert = require("../js/crimedata.js");
+convert = require("../js/converting2json.js");
 
 describe("A series of test for Converting  CSV to JSON", 
 	function(err){
